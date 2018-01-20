@@ -1,0 +1,186 @@
+<!--**************************************************************************
+* Fichier     : factsage.html
+* Auteur      : Alexandre Thimonier & Freddy Sossa
+* Travail     : TD1
+* Date		  : Lundi 25 septembre
+***************************************************************************/-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Bixi </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bixi.css" />
+
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" type ="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script src="bixi.js"></script>
+
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <!--BOOTSTRAP-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav id="nav_bar" class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">PokemonGo</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Accueil</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-globe" aria-hidden="false"></span></a>
+                    <ul id="drop" class="dropdown-menu">
+                        <li><a href="#">FR</a></li>
+                        <li><a href="#">EN</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <ul class="nav nav-tabs">
+	    <li class="active"><a data-toggle="tab" href="#tournee">Realiser une tournée</a></li>
+            <li><a data-toggle="tab" href="#carte">Carte des poubelles</a></li>
+            <li><a data-toggle="tab" href="#stations">Liste des poubelles</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- Carte des Stations est actif-->
+            <div id="carte" class="tab-pane fade in active">
+
+                <div id="ChoixEtEtatStation" class="row">
+                    <div class="col-sm-4">
+                        <div id="TagsEtLocalisation" class="ui-widget">
+                            <label for="tags">Tags: </label>
+                            <input id="tags" type="text">
+                            <h3>Localisation:</h3>
+                            <h4 id="SelectedElement"></h3>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-7">
+                        <h3>État de la poubelles</h3>
+                        <table id="tableauEtat" class="table table-striped">
+                            <thead>
+                                <tr style="background-color: dodgerblue">
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+
+                                        <span class="col-sm-6"> ID poubelle</span>
+                                        <span id = "stationId" class="badge">-</span>
+
+                                    </td>
+
+                                    <td>
+                                        <span class="col-sm-6"> NULL </span>
+                                        <span id = "veloDispo" class="badge">-</span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="col-sm-6">  Remplie </span>
+                                        <span id = "statutBloque" class="badge"> -</span>
+                                    </td>
+
+                                    <td>
+                                        <span class="col-sm-6"> NULL </span>
+                                        <span id = "borneDispo" class="badge">-</span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="col-sm-6">  NULL </span>
+                                        <span id = "statutSuspendu" class="badge">-</span>
+                                    </td>
+
+                                    <td>
+                                        <span class="col-sm-6">  NULL </span>
+                                        <span id = "veloinDispo" class="badge">-</span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="col-sm-6">  Hors service </span>
+                                        <span id = "statutService" class="badge">-</span>
+                                    </td>
+
+                                    <td>
+                                        <span class="col-sm-6">  NULL </span>
+                                        <span id = "borneinDispo" class="badge">-</span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="googleMap"></div>
+
+            </div>
+
+            <!-- Liste des Stations est actif-->
+            <div id="stations" class="tab-pane fade">
+
+                <h3>Etat de toutes les stations de vélos</h3>
+                <p>Afficher</p>
+
+                <table id="myTab" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom Station</th>
+                            <th>Vélos disponibles</th>
+                            <th>Bornes disponibles</th>
+                            <th>État bloqué</th>
+                            <th>État suspendu</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+            </div>
+
+	   <div id="tournee" class="tab-pane fade in active">
+
+	   </div>
+
+        </div>
+    </div>
+
+    <!--GOOGLE MAPS-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjonwWBWoE1W6L8sU7KPl7zkRLSaPNC2o"></script>
+
+
+</body>
