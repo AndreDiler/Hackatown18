@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title> Bixi </title>
+    <title> PokemonGo </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="bixi.css" />
 
@@ -65,7 +65,7 @@
         <div class="tab-content">
 
             <!-- Carte des Stations est actif-->
-            <div id="carte" class="tab-pane fade in active">
+            <div id="carte" class="tab-pane fade">
 
                 <div id="ChoixEtEtatStation" class="row">
                     <div class="col-sm-4">
@@ -146,7 +146,7 @@
                     </div>
                 </div>
 
-                <div id="googleMap"></div>
+                <div id="mapPoubelles"></div>
 
             </div>
 
@@ -173,14 +173,17 @@
             </div>
 
 	   <div id="tournee" class="tab-pane fade in active">
-
+		<div>
+			Bienvenue
+			<div id="mapTournee"></div>
+		</div>
 	   </div>
 
         </div>
     </div>
 
     <!--GOOGLE MAPS-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjonwWBWoE1W6L8sU7KPl7zkRLSaPNC2o"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUZ6g0BqddtqMOoKluD-rjYGqrmpYuWgI"></script>
 
 
 </body>

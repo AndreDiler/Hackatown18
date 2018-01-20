@@ -81,12 +81,14 @@ function parseStation(value) {
 
 //Fonction pour initilaiser la GOOGLE MAP au Début
 function initialiserMap() {
+
     var myMap = {
         center: new google.maps.LatLng(45.50364, -73.61503),
         zoom: 13,
     };
-    var map = new google.maps.Map(document.getElementById("googleMap"), myMap);
-
+    var map = new google.maps.Map(document.getElementById("mapPoubelles"), myMap);
+    //var map2 = new google.maps.Map(document.getElementById("mapTournee"), myMap);
+    placerClusters();
 }
 
 //Fonction pour placer un marqueur sur la carte
@@ -95,12 +97,66 @@ function placerMarqueur(latitude, longitude) {
         center: new google.maps.LatLng(latitude, longitude),
         zoom: 17,
     };
-    var map = new google.maps.Map(document.getElementById("googleMap"), myMap);
+    var map = new google.maps.Map(document.getElementById("mapPoubelles"), myMap);
     var myCenter = new google.maps.LatLng(latitude, longitude);
     var marker = new google.maps.Marker({
         position: myCenter
     });
     marker.setMap(map);
+}
+
+//Fonction pour placer plusieurs marqueurs
+function placerClusters()
+{
+	//initialise map
+   var directionsService = new google.maps.DirectionsService();
+   var directionsDisplay = new google.maps.DirectionsRenderer();
+   var myMap = {
+        center: new google.maps.LatLng(45.50364, -73.61503),
+        zoom: 13,
+    };
+   var map = new google.maps.Map(document.getElementById("mapTournee"), myMap);
+   directionsDisplay.setMap(map);
+
+
+	//place marker
+   /*var markers = [
+	[45.51035067563653, -73.55650842189789],
+	[45.53929155936048, -73.54103073477745],
+	[45.51113228073946, -73.56790713965893]
+   ];
+   for( i = 0; i < markers.length; i++ ) {
+	var position = new google.maps.LatLng(markers[i][0], markers[i][1]);
+	marker = new google.maps.Marker({
+            position: position,
+            map: map,
+        });
+   }
+
+   var startMarker = {lat: 45.51035067563653, lng: -73.55650842189789};
+   var endMarker = {lat: 45.53929155936048, lng: -73.54103073477745};
+   var midlMarker = {lat: 45.51113228073946, lng: -73.56790713965893};   */
+
+   var startMarker = new google.maps.LatLng(45.51035067563653, -73.55650842189789);
+   var endMarker = new google.maps.LatLng(45.53929155936048, -73.54103073477745);
+   var midlMarker = [new google.maps.LatLng(45.51113228073946, -73.56790713965893)];
+
+   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var request = {
+		origin: startMarker,
+		destination: endMarker,
+		travelMode: 'DRIVING'
+	};
+	directionsService.route(request, function(result, status) {
+		if(status == 'OK') {
+			directionsDisplay.setDirections(result);
+			console.log("correct");
+		}		
+	});
+  };
+
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+  directionsDisplay.setMap(map);
 }
 
 /** Initialsie l'autocomplétion et permet d'afficher automatiquement dans le tableau les informations
