@@ -137,14 +137,26 @@ function placerClusters()
    var endMarker = {lat: 45.53929155936048, lng: -73.54103073477745};
    var midlMarker = {lat: 45.51113228073946, lng: -73.56790713965893};   */
 
-   var startMarker = new google.maps.LatLng(45.51035067563653, -73.55650842189789);
-   var endMarker = new google.maps.LatLng(45.53929155936048, -73.54103073477745);
-   var midlMarker = [new google.maps.LatLng(45.51113228073946, -73.56790713965893)];
+   var endMarker = new google.maps.LatLng(45.51035067563653, -73.55650842189789);
+   var startMarker = new google.maps.LatLng(45.53929155936048, -73.54103073477745);
+   var midlMarker1 = new google.maps.LatLng(45.51113228073946, -73.56790713965893);
+   var midlMarker2 = new google.maps.LatLng(45.50918810659251, -73.55457991361618);
+
+   var waypts = [];
+   waypts.push({
+	location: midlMarker2,
+	stopover: true
+	});
+   waypts.push({
+	location: midlMarker1,
+	stopover: true
+	});
 
    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var request = {
 		origin: startMarker,
 		destination: endMarker,
+		waypoints: waypts,
 		travelMode: 'DRIVING'
 	};
 	directionsService.route(request, function(result, status) {
