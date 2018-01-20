@@ -1,0 +1,41 @@
+{
+	"poubelle": 
+	[
+	  {
+			"id": "1",
+			"coordonnees": {
+				"latitude": 45.51035067563653,
+				"longitude": -73.55650842189789
+		  },
+		  "remplie" : true,
+		  "Masse": 489
+	  },
+	  {
+			"id": "2",
+			"coordonnees": {
+				"latitude": 45.55789545752947,
+				"longitude": -73.5765291005373
+		  },
+		  "remplie" : true,
+		  "Masse": 523
+	  },
+	  {
+			"id": "3",
+			"coordonnees": {
+				"latitude": 45.51411452790017,
+				"longitude": -73.55264469981194
+		  },
+		  "remplie" : false,
+		  "Masse": 648
+	  },
+	  {
+			"id": "4",
+			"coordonnees": {
+				"latitude": 45.51086,
+				"longitude": -73.54983
+		  },
+		  "remplie" : true,
+		  "Masse": 123
+	  }
+	]
+}
