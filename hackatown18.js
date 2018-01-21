@@ -40,7 +40,7 @@ function loadData() {
 				]);
 			}
 		}
-		console.log(tableauPoubelles);
+		//console.log(tableauPoubelles);
 		
 	});
 }
@@ -66,7 +66,7 @@ function initDataTable()
 		]
 
 	    });
-	console.log(tableauPoubelles);
+	//console.log(tableauPoubelles);
 }
 
 
@@ -138,7 +138,6 @@ function placerWaypoints()
   directionsDisplay.setMap(map);
   console.log(waypts.length);
   waypts =[];
-  console.log(waypts.length);
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var request = {
@@ -151,6 +150,16 @@ function placerWaypoints()
 		if(status == 'OK') {
 			directionsDisplay.setDirections(result);
 			//console.log("correct");
+			console.log(result);
+			var totalDistance = 0;
+			var totalDuration = 0;
+			var legs = result.routes[0].legs;
+			for(var i=0; i<legs.length; ++i) {
+				totalDistance += legs[i].distance.value;
+				totalDuration += legs[i].duration.value;
+			}
+			$('#distance').text(totalDistance);
+			$('#duration').text(totalDuration);
 		}		
 	});
   };
@@ -233,6 +242,24 @@ function initCarteLocalisation()
 	 }, 500);
 }
 
+function convertion()
+{
+	var distance = 0;
+	var duree = 0;	
+
+	/*document.getElementById("distance").innerHTML = 4;
+	document.getElementById("duration").innerHTML = 4;*/
+
+	distance = document.getElementById("distance").innerHTML;
+	duree = document.getElementById("duration").innerHTML;
+	console.log(distance);
+	console.log(duree);
+	distance = distance*0.001 | 0;
+	duree = duree/60 | 0;	
+	document.getElementById("distanceRslt").innerHTML = distance;
+	document.getElementById("durationRslt").innerHTML = duree;
+}
+
 
 $(document).ready(function () {
 
@@ -240,8 +267,7 @@ $(document).ready(function () {
     loadData();
     setTimeout(function(){initDataTable();},2000);
     complete();
-    setTimeout(function(){ placerWaypoints(); }, 1000);
-    setInterval(function(){loadData();  setTimeout(function(){placerWaypoints();},2000);} , 10000);
-
+    setTimeout(function(){ placerWaypoints(); setTimeout(function(){convertion();},1000); }, 1000);
+    setInterval(function(){loadData();  setTimeout(function(){placerWaypoints(); convertion(); },2000);} , 10000);
 
 });
