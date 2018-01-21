@@ -1,41 +1,158 @@
 {
-	"poubelle": 
+	"poubelles": 
 	[
 	  {
 			"id": "1",
+		  	"croisement": "Drummond / Sherbrooke",
 			"coordonnees": {
-				"latitude": 45.51035067563653,
-				"longitude": -73.55650842189789
+				"latitude": 45.500447,
+				"longitude": -73.577995
 		  },
-		  "remplie" : true,
-		  "Masse": 489
+		  "vide" : false
 	  },
 	  {
 			"id": "2",
+		  	"croisement": "Summerhill / Guy",
 			"coordonnees": {
-				"latitude": 45.55789545752947,
-				"longitude": -73.5765291005373
+				"latitude": 45.496454,
+				"longitude": -73.583746
 		  },
-		  "remplie" : true,
-		  "Masse": 523
+		  "vide" : false
 	  },
 	  {
 			"id": "3",
+		  	"croisement": "LaSalle / Wellington",
 			"coordonnees": {
-				"latitude": 45.51411452790017,
-				"longitude": -73.55264469981194
+				"latitude": 45.467578,
+				"longitude": -73.566488
 		  },
-		  "remplie" : false,
-		  "Masse": 648
+		  "vide" : false
 	  },
 	  {
 			"id": "4",
+		  	"croisement": "Prince Albert / Windsor",
 			"coordonnees": {
-				"latitude": 45.51086,
-				"longitude": -73.54983
+				"latitude": 45.479497,
+				"longitude": -73.606901
 		  },
-		  "remplie" : true,
-		  "Masse": 123
+		  "vide" : false
+	  },
+	  {
+			"id": "5",
+		  	"croisement": "Hampstead Road / Finchley",
+			"coordonnees": {
+				"latitude": 45.483529,
+				"longitude": -73.643191
+		  },
+		  "vide" : true
+	  },
+	  {
+			"id": "6",
+		  	"croisement": "Parc Kindersley",
+			"coordonnees": {
+				"latitude": 45.506469,
+				"longitude": -73.649951
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "7",
+		  	"croisement": "Hudson / Soissons",
+			"coordonnees": {
+				"latitude": 45.505076,
+				"longitude": -73.625129
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "8",
+		  	"croisement": "Polytechnique",
+			"coordonnees": {
+				"latitude": 45.503791,
+				"longitude": -73.613585
+		  },
+		  "vide" : true
+	  },
+	  {
+			"id": "9",
+		  	"croisement": "Wiseman / d'Anvers",
+			"coordonnees": {
+				"latitude": 45.530050,
+				"longitude": -73.640024
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "10",
+		  	"croisement": "Wiseman / d'Anvers",
+			"coordonnees": {
+				"latitude": 45.530050,
+				"longitude": -73.640024
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "11",
+		  	"croisement": "Saint Zotique O / Clark",
+			"coordonnees": {
+				"latitude": 45.531331,
+				"longitude": -73.612876
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "12",
+		  	"croisement": "Marché Jean-Talon",
+			"coordonnees": {
+				"latitude": 45.536643,
+				"longitude": -73.614467
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "13",
+		  	"croisement": "Parc Nicolas-Tillemont",
+			"coordonnees": {
+				"latitude": 45.554900,
+				"longitude": -73.613800
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "14",
+		  	"croisement": "Metro Saint-Michel",
+			"coordonnees": {
+				"latitude": 45.559662,
+				"longitude": -73.600299
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "15",
+		  	"croisement": "Hôpital Santa Cabrini",
+			"coordonnees": {
+				"latitude": 45.581150,
+				"longitude": -73.571749
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "16",
+		  	"croisement": "Repentigny / de Renty",
+			"coordonnees": {
+				"latitude": 45.582757,
+				"longitude": -73.551000
+		  },
+		  "vide" : false
+	  },
+	  {
+			"id": "17",
+		  	"croisement": "Gratien-Gélinas / Anne-Hébert",
+			"coordonnees": {
+				"latitude": 45.587032,
+				"longitude": -73.534640
+		  },
+		  "vide" : false
 	  }
 	]
 }

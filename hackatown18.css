@@ -1,0 +1,176 @@
+/*on definie les tailles de reference*/
+html, body 
+{
+    width :100%;
+    height:100%;
+}
+
+/***********************************
+ * POUR LA NAV_BAR
+ * *********************************/
+#nav_bar
+{
+    background-color: rgb(30, 157, 216);
+    border:none;
+}
+
+.navbar-nav li a:hover, .navbar-nav > .active > a 
+{
+  color: #fff !important;
+  background-color:rgb(0, 113, 178) !important;
+}
+
+#nav_bar .navbar-brand
+{
+    color: white;
+    font-weight:bold;
+}
+
+#nav_bar .fa {
+  color: white;
+}
+
+#drop{
+    color: black;
+}
+
+.container-fluid
+{
+    padding-left:50px!important;
+    padding-right:50px!important;
+}
+
+/***********************************
+ * POUR LE CONTAINER
+ * *********************************/
+.container ul
+{
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.container ul .active a{
+    background-color: rgb(29, 198, 117) !important;
+}
+
+/*le conteneur sera remplacé suivant l'onglet selectionné*/
+.container
+{
+    
+    margin:0 !important;
+    padding:0 !important;
+    width:100% !important;
+}
+
+/***********************************
+ * POUR L'ONGLET CARTE DES STATIONS
+ * *********************************/
+#ChoixEtEtatStation
+{
+    margin:50px ! important;
+}
+
+#ChoixEtEtatStation h3
+{
+    color: rgb(30, 157, 216);
+}
+
+#TagsEtLocalisation
+{
+    border-right:2px;
+    border-right-style: solid;
+    border-color:rgb(220,220,220);
+}
+
+#TagsEtLocalisation input
+{
+    width:60%;
+}
+
+/*on affiche la station que l'utilisateur a choisi*/
+#SelectedElement
+{
+    height:140px;
+    padding:50px;
+    border-top:2px;
+    border-top-style: solid;
+    border-color:rgb(220,220,220);
+    margin-right:50px;
+    text-align:center;
+    font-size:30px;
+}
+
+/*Pour le resultat d'autocomplete*/
+.ui-autocomplete {
+    position: absolute;
+    left: 0;
+    float: left;
+    display: none;
+    min-width: 160px;   
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.ui-state-hover, .ui-state-active {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0088cc;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    background-image: none;
+}
+
+/*on supprime cette section pour ne pas avoir de repetitions*/
+.ui-helper-hidden-accessible
+{
+    visibility:hidden;
+}
+
+#mapPoubelles
+{
+     width:100%;
+     height:53vh;
+}
+
+/***********************************
+ * POUR L'ONGLET LISTE DES STATIONS
+ * *********************************/
+#poubelles
+{
+    width:100%;
+    padding-left:50px;
+    padding-right:50px;
+}
+
+#tableauPoubelles
+{
+     width:100%!important;
+}
+
+/***********************************
+ * POUR L'ONGLET DE LA TOURNEE
+ * *********************************/
+#mapTournee
+{
+     width:100%;
+     height:85vh;
+}
