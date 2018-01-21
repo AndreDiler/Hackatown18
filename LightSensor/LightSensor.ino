@@ -19,16 +19,17 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   int sensorValue=analogRead(sensor);
-  Serial.println(sensorValue);
+  //Serial.println(sensorValue);
 
-  // Si valeur de luminosité supérieur au seuil,
-  // la poubelle est vide.
-  if(sensorValue > threshold) {
+  bool isEmpty = sensorValue > threshold;
+  Serial.println(isEmpty);
+
+  if(isEmpty) {
     digitalWrite(EMPTY_LED, HIGH);
     digitalWrite(FULL_LED, LOW);
   } else {
     digitalWrite(FULL_LED, HIGH);
     digitalWrite(EMPTY_LED, LOW);
   }
-  delay(1000);
+  delay(500);
 }
