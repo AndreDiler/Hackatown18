@@ -5,29 +5,43 @@ html, body
     height:100%;
 }
 
+body
+{
+   height:92%;
+
+}
 /***********************************
  * POUR LA NAV_BAR
  * *********************************/
 #nav_bar
 {
-    background-color: rgb(30, 157, 216);
+    list-style-type: none;
+    background: linear-gradient(rgb(29, 198, 117), rgb(113, 242, 180), white);
     border:none;
+    height:8%;
+    text-align:center;
 }
 
-.navbar-nav li a:hover, .navbar-nav > .active > a 
+#nav_bar div
 {
-  color: #fff !important;
-  background-color:rgb(0, 113, 178) !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
 }
 
-#nav_bar .navbar-brand
-{
-    color: white;
-    font-weight:bold;
+.nav-tabs > li, .nav-pills > li {
+    float:none!important;
+    display:inline-block!important;
 }
 
-#nav_bar .fa {
-  color: white;
+.nav-tabs, .nav-pills {
+    text-align:center!important;
+}
+
+.nav-tabs {
+	font-family: 'Oswald', sans-serif;
+	color: balck;
+	font-size: 200%; 
+	border-color: rgb(29, 198, 117) !important;
 }
 
 #drop{
@@ -72,7 +86,8 @@ html, body
 
 #ChoixEtEtatStation h3
 {
-    color: rgb(30, 157, 216);
+    color:rgb(29, 198, 117);
+    font-family: 'Oswald', sans-serif;
 }
 
 #TagsEtLocalisation
@@ -80,11 +95,28 @@ html, body
     border-right:2px;
     border-right-style: solid;
     border-color:rgb(220,220,220);
+    font-size: 20px;
 }
 
 #TagsEtLocalisation input
 {
     width:60%;
+    background-color:white;
+    border: 1px solid black;
+    /*border-bottom: 2px solid rgb(51, 122, 183);;*/
+}
+
+#TagsEtLocalisation label
+{
+    /*border-bottom: 2px solid rgb(51, 122, 183);;
+    border-left: 2px solid rgb(51, 122, 183);;*/
+    padding-left: 5px;
+    color:rgb(29, 198, 117);
+}
+
+thead 
+{
+	background-color: rgb(51, 122, 183);
 }
 
 /*on affiche la station que l'utilisateur a choisi*/
@@ -98,6 +130,7 @@ html, body
     margin-right:50px;
     text-align:center;
     font-size:30px;
+    color: rgb(200,200,200);
 }
 
 /*Pour le resultat d'autocomplete*/

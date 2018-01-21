@@ -8,10 +8,10 @@ var DANGER = "label label-danger badge-pill";
 
 function loadData() {
     //Récupération des données du serveur
-	$.getJSON("http://vps504371.ovh.net:5000/poubelles").then((json) =>
+	$.getJSON("pokemonGoRevolution.json").then((json) =>
 	{
 		//console.log(json.poubelles);
-		var temp = json._items;
+		var temp = json.poubelles;
 		
 
 		for (var i = 0; i < temp.length; i++) 
@@ -188,6 +188,7 @@ function complete() {
                     }
                 }
                 document.getElementById("SelectedElement").innerHTML = ui.item.value;
+		document.getElementById("SelectedElement").style = "color:black;";
             }
         });
     });
@@ -216,6 +217,19 @@ function changerCSSNombre(valeur, element) {
     element.style.borderRadius = "1em";
     element.style.margin = "0 0.25em";
 }
+
+function initCarteLocalisation()
+{
+	setTimeout(function(){ 
+		var myMap = {
+        		center: new google.maps.LatLng(45.50364, -73.61503),
+       			zoom: 13,
+    		};
+		var map = new google.maps.Map(document.getElementById("mapPoubelles"), myMap);
+		
+	 }, 500);
+}
+
 
 $(document).ready(function () {
 
