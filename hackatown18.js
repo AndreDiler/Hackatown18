@@ -8,10 +8,10 @@ var DANGER = "label label-danger badge-pill";
 
 function loadData() {
     //Récupération des données du serveur
-	$.getJSON("pokemonGoRevolution.json").then((json) =>
+	$.getJSON("http://vps504371.ovh.net:5000/poubelles").then((json) =>
 	{
 		//console.log(json.poubelles);
-		var temp = json.poubelles;
+		var temp = json._items;
 		
 
 		for (var i = 0; i < temp.length; i++) 
